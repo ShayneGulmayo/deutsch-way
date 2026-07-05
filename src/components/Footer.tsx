@@ -1,10 +1,12 @@
+import logo from '../assets/logo.png'
+
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--border-color)] bg-[var(--bg-primary)] py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="flex items-center gap-3">
-            <div className="flag-stripe h-8 w-2 rounded-sm" />
+            <img src={logo} alt="deutsch-way logo" className="h-10 w-10" />
             <span className="font-display text-lg font-bold">
               <span className="text-german-red">deutsch</span>
               <span className="text-german-gold">-way</span>

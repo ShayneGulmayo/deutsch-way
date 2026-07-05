@@ -47,7 +47,7 @@ export default function Hero() {
         <div className="mt-16 grid gap-4 sm:grid-cols-3">
           {[
             { stat: 'Earn', label: 'While You Learn' },
-            { stat: '€0', label: 'No Tuition in Public Institutions' },
+            { stat: 'No Tuition', label: 'In Public Institutions' },
             { stat: 'High Demand', label: 'Secure Future Careers' },
           ].map((item) => (
             <div
