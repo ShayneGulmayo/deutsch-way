@@ -8,43 +8,43 @@
   --color-german-red-dark: #9b0c24;
   --color-german-gold: #ffcc00;
   --color-german-gold-dark: #e6b800;
-  --color-german-black: #1a1a1a;
+  --color-brand-dark: #071e44;
 }
 
 :root {
   --bg-primary: #fffaf5;
   --bg-secondary: #ffffff;
   --bg-elevated: #ffffff;
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
+  --text-primary: #071e44;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
   --border-color: #e5e7eb;
   --hero-gradient: linear-gradient(
     135deg,
     rgba(200, 16, 46, 0.08) 0%,
     rgba(255, 204, 0, 0.12) 50%,
-    rgba(200, 16, 46, 0.06) 100%
+    rgba(7, 30, 68, 0.06) 100%
   );
-  --card-shadow: 0 4px 24px rgba(200, 16, 46, 0.08);
+  --card-shadow: 0 4px 24px rgba(7, 30, 68, 0.08);
   --nav-bg: rgba(255, 250, 245, 0.85);
 }
 
 .dark {
-  --bg-primary: #0c0c0f;
-  --bg-secondary: #141418;
-  --bg-elevated: #1c1c22;
+  --bg-primary: #051428;
+  --bg-secondary: #071e44;
+  --bg-elevated: #0c2a5a;
   --text-primary: #f5f5f5;
-  --text-secondary: #d1d5db;
-  --text-muted: #9ca3af;
-  --border-color: #2a2a32;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: #1e3a66;
   --hero-gradient: linear-gradient(
     135deg,
     rgba(200, 16, 46, 0.18) 0%,
     rgba(255, 204, 0, 0.1) 50%,
-    rgba(200, 16, 46, 0.12) 100%
+    rgba(7, 30, 68, 0.35) 100%
   );
   --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --nav-bg: rgba(12, 12, 15, 0.9);
+  --nav-bg: rgba(5, 20, 40, 0.92);
 }
 
 html {
@@ -61,7 +61,7 @@ body {
 .flag-stripe {
   background: linear-gradient(
     to bottom,
-    var(--color-german-black) 33.33%,
+    var(--color-brand-dark) 33.33%,
     var(--color-german-red) 33.33%,
     var(--color-german-red) 66.66%,
     var(--color-german-gold) 66.66%

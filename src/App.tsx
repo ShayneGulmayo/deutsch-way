@@ -1,28 +1,22 @@
+import { Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Requirements from './components/Requirements'
-import Professions from './components/Professions'
-import Benefits from './components/Benefits'
-import Journey from './components/Journey'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import Layout from './components/Layout'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ServicesPage from './pages/ServicesPage'
+import ContactPage from './pages/ContactPage'
 
 export default function App() {
   return (
     <ThemeProvider>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Requirements />
-        <Professions />
-        <Benefits />
-        <Journey />
-        <Contact />
-      </main>
-      <Footer />
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="services" element={<ServicesPage />} />
+          <Route path="contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
     </ThemeProvider>
   )
 }

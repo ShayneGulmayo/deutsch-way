@@ -1,45 +1,52 @@
 import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#requirements', label: 'Requirements' },
-  { href: '#careers', label: 'Careers' },
-  { href: '#journey', label: 'Your Journey' },
-  { href: '#contact', label: 'Contact' },
+  { to: '/', label: 'Home', end: true },
+  { to: '/about', label: 'About' },
+  { to: '/services', label: 'Services' },
+  { to: '/contact', label: 'Contact' },
 ]
+
+const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+  [
+    'text-sm font-medium transition-colors',
+    isActive ? 'text-german-red' : 'text-[var(--text-secondary)] hover:text-german-red',
+  ].join(' ')
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
+  const closeMenu = () => setMenuOpen(false)
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-(--border-color) backdrop-blur-md" style={{ backgroundColor: 'var(--nav-bg)' }}>
+    <header
+      className="fixed inset-x-0 top-0 z-50 border-b border-[var(--border-color)] backdrop-blur-md"
+      style={{ backgroundColor: 'var(--nav-bg)' }}
+    >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3" onClick={closeMenu}>
           <img src={logo} alt="deutsch-way logo" className="h-10 w-10" />
           <span className="font-display text-xl font-bold tracking-tight">
             <span className="text-german-red">deutsch</span>
             <span className="text-german-gold">-way</span>
           </span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-(--text-secondary) transition-colors hover:text-german-red"
-            >
+            <NavLink key={link.to} to={link.to} end={link.end} className={navLinkClass}>
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </div>
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <a
-            href="#contact"
+            href="#assessment"
             className="hidden rounded-full bg-german-red px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-german-red-dark sm:inline-block"
           >
             Enroll Now
@@ -47,7 +54,7 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-(--border-color) md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border-color)] md:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,21 +75,29 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="border-t border-(--border-color) bg-(--bg-secondary) px-4 py-4 md:hidden">
+        <div className="border-t border-[var(--border-color)] bg-[var(--bg-secondary)] px-4 py-4 md:hidden">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-(--text-secondary) hover:bg-(--bg-primary) hover:text-german-red"
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.end}
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  [
+                    'rounded-lg px-3 py-2 text-sm font-medium',
+                    isActive
+                      ? 'bg-[var(--bg-primary)] text-german-red'
+                      : 'text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-german-red',
+                  ].join(' ')
+                }
               >
                 {link.label}
-              </a>
+              </NavLink>
             ))}
             <a
-              href="#contact"
-              onClick={() => setMenuOpen(false)}
+              href="#assessment"
+              onClick={closeMenu}
               className="mt-2 rounded-full bg-german-red px-5 py-2.5 text-center text-sm font-semibold text-white"
             >
               Enroll Now

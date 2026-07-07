@@ -28,7 +28,7 @@ const steps = [
 
 export default function Journey() {
   return (
-    <section id="journey" className="py-16 sm:py-24">
+    <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <span className="text-sm font-semibold tracking-wider text-german-red uppercase">
