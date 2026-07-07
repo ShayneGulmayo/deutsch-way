@@ -10,7 +10,7 @@ const requirements = [
 
 export default function Requirements() {
   return (
-    <section id="requirements" className="bg-[var(--bg-secondary)] py-16 sm:py-24">
+    <section className="bg-[var(--bg-secondary)] py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <span className="text-sm font-semibold tracking-wider text-german-red uppercase">
@@ -43,8 +43,8 @@ export default function Requirements() {
 
         <div className="mt-12 text-center">
           <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-german-gold px-8 py-3.5 text-base font-semibold text-german-black transition-all hover:bg-german-gold-dark"
+            href="#assessment"
+            className="inline-flex items-center gap-2 rounded-full bg-german-gold px-8 py-3.5 text-base font-semibold text-brand-dark transition-all hover:bg-german-gold-dark"
           >
             Check Your Eligibility — Free Assessment
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
